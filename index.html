@@ -351,6 +351,16 @@
         padding-left: 5rem !important;
     }
 }
+/* BOTÓN MÁS CHICO EN MOBILE — SIN ROMPER DESKTOP */
+@media (max-width: 767px) {
+    .bundle-btn {
+        padding: 0.9rem 1.6rem !important;   /* antes era py-6 px-8 */
+        font-size: 1.1rem !important;        /* antes 2xl */
+        border-radius: 9999px !important;               /* no tan ancho como w-full */
+        margin: 0 auto !important;
+    }
+}
+
 
     </style>
 </head>
@@ -401,21 +411,8 @@
                     <p>+120.000 estudiantes en todo el mundo • Acceso inmediato • 85% de comisiones</p>
                 </div>
             </div>
-
-            <div class="mt-12">
-                <video 
-                    class="mx-auto rounded-2xl shadow-2xl max-w-4xl w-full"
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline>
-                    <source src="https://res.cloudinary.com/dsi8moeeh/video/upload/v1760717378/Grabacio%CC%81n_de_pantalla_2025-10-17_a_la_s_12.16.26_p._m._havhkd.mov" type="video/mp4">
-                    Tu navegador no soporta la reproducción de video.
-                </video>
-            </div>
         </div>
     </header>
-
     <!-- Story Section -->
     <section class="py-20 bg-white relative overflow-hidden">
         <div class="container mx-auto px-4">
@@ -670,7 +667,7 @@
                     </div>
                 </div>
 
-                <button class="w-full btn-primary py-6 px-8 rounded-full text-white font-bold text-2xl shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center">
+                <button class="bundle-btn w-full btn-primary py-6 px-8 rounded-full text-white font-bold text-2xl shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center">
                     QUIERO TODO EL CONTENIDO AHORA 💖
                     <i class="fas fa-arrow-right ml-4 animate-pulse"></i>
                 </button>
