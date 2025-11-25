@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sol - Tu Roadmap Digital 2026</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink-pastel': '#FDF2F4',
+                        'pink-base': '#F9B9C3',
+                        'pink-strong': '#E64580',
+                        'pink-stronger': '#d13a70',
+                        'text-gold-light': '#FBD6A0',
+                        'text-gold-dark': '#C59D5F',
+                        'gray-soft': '#F9FAFB',
+                        'dark-text': '#2D2D2D',
+                        'gradient-pink': '#E64580',
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'title': ['Poppins', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FDF2F4;
+            color: #2D2D2D;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: #F9B9C3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #E64580;
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px #E64580;
+        }
+
+        /* Map Line */
+        .map-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: #e5e7eb;
+            z-index: 0;
+        }
+
+        .map-line-fill {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 0%;
+            background: #E64580;
+            z-index: 1;
+            transition: height 0.5s ease-out;
+            border-radius: 9999px;
+        }
+
+        /* Step Nodes (base) */
+        .step-node {
+            width: 46px;
+            height: 46px;
+            border-radius: 9999px;
+            background: #fff;
+            border: 4px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 rgba(230,69,128,0);
+        }
+
+        .step-node span {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #E64580;
+        }
+
+        .step-node.active {
+            background-color: #E64580;
+            border-color: #ffffff;
+            box-shadow: 0 0 20px rgba(230, 69, 128, 0.6);
+            transform: scale(1.1);
+        }
+
+        .step-node.active span {
+            color: #fff;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDF2F4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F9B9C3;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E64580;
+        }
+
+        /* Primary Button */
+        .btn-primary {
+            background-color: #E64580;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #d13a70;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.25s ease;
+        }
+        .faq-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-question {
+            color: #E64580;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .icon-heart {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+        .icon-heart::before {
+            content: "🤍";
+            font-size: 1.6rem;
+            position: absolute;
+            transition: 0.3s;
+        }
+        .faq-item.active .icon-heart::before {
+            content: "❤️";
+            transform: scale(1.2);
+        }
+
+        .faq-answer {
+            display: none;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Rosa button reusable */
+        .btn-rosa {
+            background-color: #E64580;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 9999px;
+            transition: all .25s ease;
+            padding: 0.75rem 1.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+        }
+
+        .btn-rosa:hover {
+            background-color: #d13a70;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(230, 69, 128, 0.35);
+        }
+        
+        /* ============================================
+           FIX DEFINITIVO MAPA — MOBILE Y DESKTOP
+           ============================================ */
+
+        /* DESKTOP — nodo centrado */
+        @media (min-width: 768px) {
+            .map-line,
+            .map-line-fill {
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                width: 4px !important;
+            }
+
+            .step-node {
+                position: absolute !important;
+                left: 50% !important;
+                top: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: 60px !important;
+                height: 60px !important;
+                border-radius: 9999px !important;
+                background: white !important;
+                border: 4px solid #E64580 !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                z-index: 30;
+                transition: all .3s ease;
+            }
+
+            .step-node.active {
+                background: #E64580 !important;
+                box-shadow: 0 0 20px rgba(230, 69, 128, 0.6);
+            }
+        }
+
+        /* MOBILE — nodo al costado izquierdo */
+        @media (max-width: 767px) {
+
+            /* Línea a la izquierda */
+            .map-line,
+            .map-line-fill {
+                left: 28px !important;
+                transform: none !important;
+                width: 4px !important;
+            }
+
+            /* Nodo centrado en esa línea */
+            .step-node {
+                position: absolute !important;
+                left: 28px !important; /* EN LA LÍNEA */
+                top: 0 !important;
+                transform: translate(-50%, -50%) !important;
+                width: 46px !important;
+                height: 46px !important;
+                border-radius: 9999px !important;
+                background: white !important;
+                border: 4px solid #E64580 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                z-index: 30 !important;
+                transition: all .3s ease;
+            }
+
+            .step-node.active {
+                background: #E64580 !important;
+                box-shadow: 0 0 20px rgba(230, 69, 128, 0.6);
+            }
+
+        /* Texto del número */
+        .step-node span {
+            font-weight: 700 !important;
+            color: #E64580 !important;
+            font-size: 1.25rem !important;
+        }
+        .step-node.active span {
+            color: white !important;
+        }
+/* FIX: Nodo redondo perfecto en mobile */
+@media (max-width: 767px) {
+
+    .step-node {
+        position: absolute !important;
+        width: 46px !important;
+        height: 46px !important;
+        border-radius: 50% !important;
+        left: 28px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #fff !important;
+        border: 4px solid #E64580 !important;
+        z-index: 20 !important;
+    }
+
+    /* Evitar que se deforme por contenido */
+    .step-trigger {
+        position: relative;
+        min-height: 180px; /* evita aplastamiento */
+    }
+}
+/* Mover línea y nodo más a la izquierda en MOBILE */
+@media (max-width: 767px) {
+
+    .map-line,
+    .map-line-fill {
+        left: 20px !important; /* antes 28 */
+    }
+
+    .step-node {
+        left: 20px !important; /* antes 28 */
+        transform: translate(-50%, -50%) !important;
+    }
+
+    /* Mantener contenido a la derecha sin pisar nada */
+    .step-content {
+        padding-left: 5rem !important;
+    }
+}
+/* BOTÓN MÁS CHICO EN MOBILE — SIN ROMPER DESKTOP */
+@media (max-width: 767px) {
+    .bundle-btn {
+        padding: 0.9rem 1.6rem !important;   /* antes era py-6 px-8 */
+        font-size: 1.1rem !important;        /* antes 2xl */
+        border-radius: 9999px !important;               /* no tan ancho como w-full */
+        margin: 0 auto !important;
+    }
+}
+
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky Progress Bar -->
+    <div class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-pink-100 shadow-sm transition-transform duration-300" id="navbar">
+        <div class="progress-container">
+            <div class="progress-bar" id="scrollProgress"></div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+    <img 
+        src="https://i.ibb.co/bRq2N53R/Chat-GPT-Image-2-jul-2025-01-39-05-p-m-1.png" 
+        class="w-7 h-7 rounded-full shadow-sm"
+        alt="Sol Guerrieri"
+    >
+    <span class="font-title font-semibold text-pink-strong text-lg tracking-tight">
+        @hisolci
+    </span>
+</div>
+            <div class="hidden md:flex items-center gap-4 text-sm font-medium text-gray-600">
+                <span id="currentStepText">Inicio del viaje</span>
+                <a href="#offer" class="bg-pink-strong text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-pink-stronger transition shadow-lg shadow-pink-200">ACCEDER AHORA</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="bg-white pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+
+                <span class="inline-block bg-pink-pastel text-pink-strong font-semibold py-1 px-4 rounded-full text-sm mb-4">
+                    LA ACADEMIA DIGITAL #1 DEL MUNDO
+                </span>
+
+                <h1 class="text-4xl md:text-6xl font-black text-gray-800 leading-tight">
+                    Crea, lanza y vende tu propio producto digital paso a paso, sin experiencia💖
+                </h1>
+
+                <p class="mt-4 text-2xl md:text-3xl font-bold text-pink-stronger">
+                    ¡Empezá el 2026 generando ingresos con tus redes!
+                </p>
+
+                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Aunque hoy no tengas seguidores, experiencia ni producto. </br>Estas clases te dan el <strong class="text-pink-strong">MAPA</strong> claro para empezar a vender productos digitales desde cero.
+                    </p>
+
+                <a href="#offer" 
+                class="inline-block bg-pink-strong text-white font-bold text-lg py-4 px-10 rounded-full mt-8 transform transition hover:scale-105">
+                    DESBLOQUEA EL ACCESO AHORA 🤍
+                </a>
+
+                <div class="mt-8 text-gray-500 text-sm">
+                    <p>+120.000 estudiantes en todo el mundo • Acceso inmediato • 85% de comisiones</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Story Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-pink-strong rounded-3xl transform rotate-3 opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop" alt="Foto de Sol" class="relative rounded-3xl shadow-2xl w-full object-cover h-[500px] transform -rotate-2 hover:rotate-0 transition duration-500">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3">
+                        <div class="bg-green-100 p-2 rounded-full">
+                            <i data-lucide="check-circle" class="text-green-600 w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500">Experiencia</p>
+                            <p class="font-bold text-gray-800">+5 Años en Digital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="font-title text-3xl md:text-4xl font-bold mb-6 text-gray-900">Hola! Soy Sol, <span class="text-pink-strong"> Tu profe</span> 👩‍🏫</h2>
+                    <div class="space-y-4 text-gray-600 leading-relaxed text-lg">
+                        <p>
+                            Hace unos años no tenía contactos, ni títulos, ni idea de cómo funcionaba el mundo digital. Solo sabía que quería otra realidad.
+
+<b>Probé, fallé, aprendí.</b> </br> Ayudé a otros a vender. </br>Y después, construí mi propio negocio desde cero.</b>
+                        </p>
+                        <p>
+                            Hoy acompaño a personas como vos a convertir lo que saben en productos digitales, aprender a venderlos y construir un negocio con libertad, ingresos y propósito.
+                        </p>
+                        <p class="font-medium text-pink-stronger border-l-4 border-pink-strong pl-4 italic">
+                            "No tenés que ser influencer. Tenés que aprender a vender."
+                        </p>
+                        <p>
+                            No te voy a dar teoría aburrida. Te voy a dar mi <b>mapa probado</b>. ¿Lista para la primera clase?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section id="map-start" class="py-24 bg-pink-pastel/30 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative">
+            <div class="text-center mb-16">
+                <h2 class="font-title text-3xl md:text-5xl font-bold text-gray-900">Tu Ruta al Éxito</h2>
+                <p class="mt-4 text-gray-600">Puedes adquirir cada paso individualmente o el mapa completo al final.</p>
+            </div>
+
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Line -->
+                <div class="map-line"></div>
+                <div class="map-line-fill"></div>
+
+                <!-- STEP 1 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-24 md:mb-32 step-trigger" data-step="1">
+                    <!-- Left Content -->
+                    <div class="w-full md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0">
+                        <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 1: Fundamentos</span>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Cómo vender online (sin seguidores)</h3>
+                        <p class="text-gray-600 mb-6">El mito de "necesito 10k seguidores" muere aquí. Aprende a crear ofertas irresistibles desde cero.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6 inline-block text-left">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Oferta irresistible</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Estructura de ventas simple</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Checklist descargable</li>
+                        </ul>
+                        <div class="block">
+                            <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
+                                <span class="absolute top-0 left-0 w-full h-full bg-pink-strong transform -translate-x-full group-hover:translate-x-0 transition duration-300"></span>
+                                <span class="relative flex items-center gap-2">Comprar Clase 1: $10 USD <i data-lucide="shopping-bag" class="w-4 h-4"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Node -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center z-20 step-node">
+                        <span class="font-title font-bold text-gray-400 text-lg md:text-xl">1</span>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="w-full md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0 pl-12 md:pl-0">
+                        <div class="relative group">
+                            <div class="absolute inset-0 bg-pink-strong rounded-2xl opacity-0 group-hover:opacity-10 transition duration-500"></div>
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Clase 1" class="rounded-2xl shadow-lg w-full max-w-sm transform group-hover:scale-105 transition duration-500 border border-gray-100">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-24 md:mb-32 step-trigger" data-step="2">
+                    <!-- Left Image -->
+                    <div class="w-full md:w-1/2 md:pr-12 md:text-right order-3 md:order-1 mt-6 md:mt-0 pl-12 md:pl-0 flex md:justify-end">
+                        <div class="relative group">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" alt="Clase 2" class="rounded-2xl shadow-lg w-full max-w-sm transform group-hover:scale-105 transition duration-500 border border-gray-100">
+                        </div>
+                    </div>
+
+                    <!-- Node -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center z-20 step-node">
+                        <span class="font-title font-bold text-gray-400 text-lg md:text-xl">2</span>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="w-full md:w-1/2 md:pl-12 order-2 md:order-2 pl-12 md:pl-0">
+                        <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 2: Creación Rápida</span>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Productos Digitales en 1 Día</h3>
+                        <p class="text-gray-600 mb-6">No pases meses creando algo que no sabes si se venderá. Valida rápido, crea rápido.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Tipos de productos top ventas</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Crea el producto en 24hs</li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> Incluye un GPT personalizado</li>
+                        </ul>
+                        <div class="block">
+                            <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
+                                <span class="absolute top-0 left-0 w-full h-full bg-pink-strong transform -translate-x-full group-hover:translate-x-0 transition duration-300"></span>
+                                <span class="relative flex items-center gap-2">Comprar Clase 2: $10 USD <i data-lucide="shopping-bag" class="w-4 h-4"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-24 md:mb-32 step-trigger" data-step="3">
+                    <!-- Left Content -->
+                    <div class="w-full md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0">
+                        <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 3: Escaparate</span>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Optimiza tu Instagram (Máquina de Ventas)</h3>
+                        <p class="text-gray-600 mb-6">Tu perfil no es un álbum de fotos, es tu landing page. Optimízala en 30 minutos.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6 inline-block text-left">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Biografía que convierte</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Autoridad visual</li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> GPT de Optimización incluido</li>
+                        </ul>
+                        <div class="block">
+                            <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
+                                <span class="absolute top-0 left-0 w-full h-full bg-pink-strong transform -translate-x-full group-hover:translate-x-0 transition duration-300"></span>
+                                <span class="relative flex items-center gap-2">Comprar Clase 3: $10 USD <i data-lucide="shopping-bag" class="w-4 h-4"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Node -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center z-20 step-node">
+                        <span class="font-title font-bold text-gray-400 text-lg md:text-xl">3</span>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="w-full md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0 pl-12 md:pl-0">
+                        <div class="relative group">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop" alt="Clase 3" class="rounded-2xl shadow-lg w-full max-w-sm transform group-hover:scale-105 transition duration-500 border border-gray-100">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="relative flex flex-col md:flex-row items-center mb-12 step-trigger" data-step="4">
+                    <!-- Left Image -->
+                    <div class="w-full md:w-1/2 md:pr-12 md:text-right order-3 md:order-1 mt-6 md:mt-0 pl-12 md:pl-0 flex md:justify-end">
+                        <div class="relative group">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=2070&auto=format&fit=crop" alt="Clase 4" class="rounded-2xl shadow-lg w-full max-w-sm transform group-hover:scale-105 transition duration-500 border border-gray-100">
+                        </div>
+                    </div>
+
+                    <!-- Node -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 bg-white border-4 border-gray-200 rounded-full flex items-center justify-center z-20 step-node">
+                        <span class="font-title font-bold text-gray-400 text-lg md:text-xl">4</span>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="w-full md:w-1/2 md:pl-12 order-2 md:order-2 pl-12 md:pl-0">
+                        <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 4: Cierre</span>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Ventas por Chat (Anti-Vendedor)</h3>
+                        <p class="text-gray-600 mb-6">Cierra ventas sin sentirte molesto o insistente. Psicología conversacional pura.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Guiones de venta probados</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Manejo de objeciones</li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> GPT Experto en Cierre</li>
+                        </ul>
+                        <div class="block">
+                            <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
+                                <span class="absolute top-0 left-0 w-full h-full bg-pink-strong transform -translate-x-full group-hover:translate-x-0 transition duration-300"></span>
+                                <span class="relative flex items-center gap-2">Comprar Clase 4: $10 USD <i data-lucide="shopping-bag" class="w-4 h-4"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="flex justify-center mt-0 mb-12">
+                <i data-lucide="arrow-down" class="text-gray-300 w-10 h-10 animate-bounce"></i>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BUNDLE OFFER -->
+    <section id="offer" class="py-20 bg-gradient-to-b from-pink-strong to-pink-stronger text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <div class="inline-block bg-text-gold-light text-pink-stronger px-6 py-2 rounded-full font-bold mb-8 shadow-lg animate-bounce">
+                🔥 OFERTA FINAL DEL MAPA 🔥
+            </div>
+            <h2 class="font-title text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight font-extrabold">
+                ¿Por qué elegir solo uno?<br>Llevate el Mapa Completo.
+            </h2>
+            
+            <div class="max-w-3xl mx-auto bg-white text-gray-800 rounded-[3rem] p-8 md:p-12 shadow-2xl border-4 border-pink-pastel transform hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+                    <div class="text-center md:text-left">
+                        <p class="text-xl text-gray-500 line-through mb-2">Valor Total: $40 USD</p>
+                        <div class="flex items-center justify-center md:justify-start gap-4">
+                            <span class="text-6xl md:text-7xl font-bold text-pink-stronger font-title">$27</span>
+                            <span class="text-2xl font-bold text-gray-700 font-title">USD</span>
+                        </div>
+                        <p class="text-pink-strong font-medium mt-2">Ahorras $13 USD hoy</p>
+                    </div>
+                    <div class="w-48 h-48 relative hidden md:block">
+                        <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=600&q=80" alt="Pack Completo" class="rounded-xl shadow-lg absolute top-0 right-0 z-10 transform rotate-6 border-4 border-white object-cover h-full w-full">
+                        <div class="w-full h-full bg-pink-stronger rounded-xl absolute top-4 right-4 z-0 transform rotate-12 opacity-50"></div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-left mb-10">
+                    <div class="flex items-start">
+                        <i class="fas fa-gift text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Accedé a las 4 clases completas inmediatamente.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-folder-open text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Incluye todas las plantillas, ejercicios y recursos extra.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-mobile-alt text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Acceso inmediato desde cualquier dispositivo (PC/Móvil).</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-infinity text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Acceso de por vida a todo el contenido.</p>
+                    </div>
+                </div>
+
+                <div class="bg-pink-pastel p-6 rounded-2xl border-2 border-pink-base/30 mb-8">
+                    <h4 class="text-xl font-bold text-pink-stronger mb-4 flex items-center">
+                        <i class="fas fa-shopping-cart mr-3"></i> Resumen del Pedido
+                    </h4>
+                    <div class="flex justify-between items-center mb-4 text-lg font-medium border-b border-pink-base/20 pb-4">
+                        <span>Pack "Mapa Digital 2026" (4 Clases)</span>
+                        <span class="font-bold text-gray-900">$27.00 USD</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xl font-bold text-pink-stronger">
+                        <span>Total a Pagar:</span>
+                        <span>$27.00 USD</span>
+                    </div>
+                </div>
+
+                <button class="bundle-btn w-full btn-primary py-6 px-8 rounded-full text-white font-bold text-2xl shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center">
+                    QUIERO TODO EL CONTENIDO AHORA 💖
+                    <i class="fas fa-arrow-right ml-4 animate-pulse"></i>
+                </button>
+                <p class="text-gray-500 text-sm mt-4 flex items-center justify-center">
+                    <i class="fas fa-lock mr-2"></i> Pago 100% Seguro y Garantizado.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 md:py-24 bg-[#fff5f7]">
+        <div class="container mx-auto px-6 max-w-3xl">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6">
+                ¿Tenés preguntas? Tenemos respuestas 💬
+            </h2>
+
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+                Queremos que tomes una decisión con el <span class="text-pink-600 font-semibold">corazón</span> ❤️
+            </p>
+
+            <div class="faq-list space-y-4">
+
+                <div class="faq-item p-0 overflow-hidden">
+                    <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
+                        ¿Cuánto tiempo tengo acceso al curso?
+                        <span class="icon-heart"></span>
+                    </button>
+                    <div class="faq-answer text-gray-600 px-6 pb-6">
+                        Accedés de por vida. Incluye todas las actualizaciones y bonus sin costo adicional.
+                    </div>
+                </div>
+
+                <div class="faq-item p-0 overflow-hidden">
+                    <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
+                        ¿Puedo vender DWA?
+                        <span class="icon-heart"></span>
+                    </button>
+                    <div class="faq-answer text-gray-600 px-6 pb-6">
+                        Sí. Podés revender DWA y ganar el 85% de cada venta. Te damos el sistema y toda la estrategia lista.
+                    </div>
+                </div>
+
+                <div class="faq-item p-0 overflow-hidden">
+                    <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
+                        ¿Necesito experiencia previa?
+                        <span class="icon-heart"></span>
+                    </button>
+                    <div class="faq-answer text-gray-600 px-6 pb-6">
+                        No. Está pensado para principiantes. Aprendés desde cero con ejemplos reales.
+                    </div>
+                </div>
+
+                <div class="faq-item p-0 overflow-hidden">
+                    <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
+                        ¿Qué soporte tengo si me trabo?
+                        <span class="icon-heart"></span>
+                    </button>
+                    <div class="faq-answer text-gray-600 px-6 pb-6">
+                        Tenés soporte por WhatsApp, mentorías grupales y comunidad privada.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-12">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    ¿Listo para empezar tu libertad digital?
+                </h3>
+                <a href="#offer" class="bg-gradient-to-r from-pink-500 to-pink-600 text-white font-extrabold py-4 px-8 rounded-full shadow-lg hover:scale-105 transition-transform inline-block">
+                    🚀 QUIERO UNIRME A DWA
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#e74580] text-white py-14">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b border-white/20 pb-10">
+                <div class="max-w-md">
+                    <h2 class="text-4xl font-black">DWA 💗</h2>
+                    <p class="text-white/80 mt-2 leading-relaxed">
+                        La academia de <span class="font-semibold text-white">Sol Guerrieri</span> que transforma tu conocimiento en libertad digital.  
+                        Empezá hoy, sin experiencia previa.
+                    </p>
+                </div>
+
+                <div class="flex flex-row justify-center md:justify-end items-center w-full md:w-auto gap-6 mt-4 md:mt-0">
+                    <a href="https://www.instagram.com/hisolci" target="_blank" class="hover:scale-110 transition duration-300">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="w-8 h-8 filter brightness-0 invert opacity-90 hover:opacity-100">
+                    </a>
+                    <a href="#" target="_blank" class="hover:scale-110 transition duration-300">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" class="w-8 h-8 filter brightness-0 invert opacity-90 hover:opacity-100">
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-10 text-sm text-white/80 text-center md:text-left">
+                <p>© 2025 <span class="font-semibold text-white">Sol Guerrieri</span> — Digital Wealth Academy 💗</p>
+                <p class="mt-1 text-white/70">Hecho con amor, propósito y visión.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        const progressBar = document.getElementById('scrollProgress');
+        const mapLineFill = document.querySelector('.map-line-fill');
+        const steps = document.querySelectorAll('.step-trigger');
+        const navText = document.getElementById('currentStepText');
+        const navbar = document.getElementById('navbar');
+        const mapSection = document.getElementById('map-start');
+
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: "-50px"
+        };
+
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const node = entry.target.querySelector('.step-node');
+                const stepNum = entry.target.dataset.step;
+                
+                if (entry.isIntersecting) {
+                    node.classList.add('active');
+                    if (navText) {
+                        navText.innerText = `Explorando Paso ${stepNum}`;
+                        navText.style.color = '#E64580';
+                        navText.style.fontWeight = 'bold';
+                    }
+                } else {
+                    node.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+
+        steps.forEach(step => stepObserver.observe(step));
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (progressBar) progressBar.style.width = scrolled + "%";
+
+            if(winScroll > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+
+            if (mapSection && mapLineFill) {
+                const mapHeight = mapSection.offsetHeight;
+                const mapTop = mapSection.offsetTop;
+                const middle = winScroll + (window.innerHeight / 2);
+
+                let fillPercentage = ((middle - mapTop) / mapHeight) * 120;
+                if (fillPercentage < 0) fillPercentage = 0;
+                if (fillPercentage > 100) fillPercentage = 100;
+                
+                mapLineFill.style.height = `${fillPercentage}%`;
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // FAQ
+        document.addEventListener("DOMContentLoaded", () => {
+            const faqItems = document.querySelectorAll(".faq-item");
+
+            faqItems.forEach(item => {
+                const question = item.querySelector(".faq-question");
+
+                question.addEventListener("click", () => {
+                    const isActive = item.classList.contains("active");
+                    faqItems.forEach(i => i.classList.remove("active"));
+                    if (!isActive) item.classList.add("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
