@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea y Vende con Sol - Tu Mapa al Éxito Digital</title>
+    <!-- Google Fonts import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink-pastel': '#FDF2F4',
+                        'pink-base': '#F9B9C3',
+                        'pink-strong': '#E64580',
+                        'pink-stronger': '#d13a70',
+                        'text-gold-light': '#FBD6A0',
+                        'gray-soft': '#F9FAFB',
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'title': ['Poppins', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-pink': 'linear-gradient(to right, #F9B9C3, #E64580)',
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom CSS & Styling for Map Elements -->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+            color: #333;
+            overflow-x: hidden;
+        }
+        h1, h2, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Estilos para el efecto de mapa y conectores */
+        .map-connector-vertical {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: repeating-linear-gradient(to bottom, #E64580 0, #E64580 10px, transparent 10px, transparent 20px);
+            z-index: 0;
+            top: 0;
+        }
+
+        .step-marker {
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(230, 69, 128, 0.3);
+        }
+        
+        .btn-primary {
+            background-image: linear-gradient(to right, #E64580, #d13a70);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(230, 69, 128, 0.3), 0 2px 4px -1px rgba(230, 69, 128, 0.2);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(230, 69, 128, 0.4), 0 4px 6px -2px rgba(230, 69, 128, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ========== HEADER HERO SECTION ========== -->
+    <header class="bg-pink-pastel relative overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-base/30 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-pink-strong/20 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-4 py-16 md:py-24 relative z-10 text-center md:text-left">
+            <div class="max-w-3xl mx-auto md:mx-0">
+                <span class="inline-block py-1 px-3 rounded-full bg-pink-strong/10 text-pink-stronger text-sm font-semibold mb-4">
+                    🚀 Objetivo 2026
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight mb-6">
+                    Crea, lanza y vende tu propio <span class="text-pink-stronger">producto digital</span> paso a paso, sin experiencia.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+                    Empezá el 2026 monetizando tus redes sociales con productos digitales, aunque hoy no tengas seguidores, experiencia ni un producto creado. Estas clases son el punto de partida que te van a dar claridad, herramientas y un camino real para empezar a generar ingresos online con tus redes.
+                </p>
+                <a href="#mapa-del-tesoro" class="btn-primary inline-flex items-center px-8 py-4 border border-transparent text-lg font-bold rounded-full text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-strong">
+                    VER EL MAPA DE RUTA 🗺️
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== BIO SECTION (STORYTELLING) ========== -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
+                <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+                    <!-- Sol's Photo -->
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-pink-base shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Sol, tu profe" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-pink-stronger/20 to-transparent"></div>
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl text-gray-900 mb-6">
+                        Hola! Soy Sol, tu profe 👩‍🏫
+                    </h2>
+                    <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
+                        <p>
+                            Hace más de 5 años que trabajo en el mundo digital. Empecé sin contactos, sin títulos y sin saber vender. Fui aprendiendo a fuerza de prueba y error, ayudando primero a otros… y después, construyendo mi propio negocio digital.
+                        </p>
+                        <p class="font-medium text-pink-stronger">
+                            Hoy acompaño a otras personas a hacer lo mismo: crear productos digitales, aprender a venderlos, y construir un negocio con libertad.
+                        </p>
+                        <p>
+                            He diseñado este mapa de 4 pasos exactos para que no tengas que pasar por los mismos errores que yo. ¿Empezamos el viaje?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== THE FUNNEL MAP SECTION ========== -->
+    <section id="mapa-del-tesoro" class="py-20 bg-pink-pastel/50 relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4">Tu Mapa de Ruta al Éxito Digital</h2>
+                <p class="text-lg text-gray-600">Sigue estos 4 pasos estratégicos. Cada uno es una pieza fundamental de tu nuevo negocio.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative">
+                <!-- The central connecting line for mobile, shifts on desktop -->
+                <div class="hidden md:block map-connector-vertical left-1/2"></div>
+
+                <!-- ============ PASO 1 ============ -->
+                <div class="relative z-10 mb-24 md:mb-32">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <!-- Step Marker & Image (Left on desktop) -->
+                        <div class="md:w-1/2 flex flex-col items-center md:items-end order-1">
+                            <div class="bg-white p-4 rounded-2xl shadow-lg transform rotate-[-2deg] max-w-sm w-full">
+                                <!-- Image: Laptop/Strategy -->
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Paso 1: Vender Online" class="rounded-xl w-full h-auto shadow-sm object-cover">
+                            </div>
+                            <!-- Mobile Connector & Marker -->
+                            <div class="flex flex-col items-center mt-4 md:hidden">
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                                <div class="step-marker w-12 h-12 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                            </div>
+                        </div>
+
+                        <!-- Desktop Center Marker -->
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-10 flex-col items-center">
+                             <div class="step-marker w-16 h-16 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-2xl border-4 border-pink-pastel">1</div>
+                        </div>
+
+                        <!-- Content (Right on desktop) -->
+                        <div class="md:w-1/2 bg-white rounded-3xl p-8 shadow-xl border-2 border-pink-pastel relative order-2">
+                            <div class="md:pl-12"> <!-- Spacing for center marker -->
+                                <h3 class="text-2xl font-title text-pink-stronger mb-4">El paso a paso para vender online (sin seguidores)</h3>
+                                <ul class="space-y-3 mb-8 text-gray-700">
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Cómo crear una oferta irresistible</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Estructura de página de ventas simple y efectiva</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Mini embudo para automatizar ventas</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Checklist y recursos descargables</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Crea tu pagina web en 5 minutos</li>
+                                </ul>
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                                    <span class="text-2xl font-bold text-gray-900">$10 USD</span>
+                                    <button class="btn-primary py-3 px-6 rounded-full text-white font-bold text-sm">
+                                        QUIERO ESTA CLASE 💖
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ PASO 2 (Reversed Layout on Desktop) ============ -->
+                <div class="relative z-10 mb-24 md:mb-32">
+                     <!-- Desktop Center Marker -->
+                     <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-10 flex-col items-center">
+                        <div class="step-marker w-16 h-16 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-2xl border-4 border-pink-pastel">2</div>
+                   </div>
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <!-- Content (Left on desktop) -->
+                        <div class="md:w-1/2 bg-white rounded-3xl p-8 shadow-xl border-2 border-pink-pastel order-2 md:order-1">
+                             <div class="md:pr-12 text-right md:text-left"> <!-- Spacing for center marker & alignment -->
+                                <h3 class="text-2xl font-title text-pink-stronger mb-4">Cómo crear productos digitales sin esfuerzo y en 1 día</h3>
+                                <ul class="space-y-3 mb-8 text-gray-700 inline-block text-left">
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Tipos de productos que más se venden hoy</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Ejercicios para definir tu idea y formato ideal</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Crea el producto en 1 día</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Un GPT personalizado</li>
+                                </ul>
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                                    <span class="text-2xl font-bold text-gray-900">$10 USD</span>
+                                    <button class="btn-primary py-3 px-6 rounded-full text-white font-bold text-sm">
+                                        QUIERO ESTA CLASE 💖
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Step Marker & Image (Right on desktop) -->
+                         <div class="md:w-1/2 flex flex-col items-center md:items-start order-1 md:order-2">
+                            <!-- Mobile Connector & Marker -->
+                            <div class="flex flex-col items-center mb-4 md:hidden">
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                                <div class="step-marker w-12 h-12 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg transform rotate-[2deg] max-w-sm w-full">
+                                <!-- Image: Planning/Writing -->
+                                <img src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&w=800&q=80" alt="Paso 2: Crear Productos" class="rounded-xl w-full h-auto shadow-sm object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- ============ PASO 3 ============ -->
+                 <div class="relative z-10 mb-24 md:mb-32">
+                    <!-- Desktop Center Marker -->
+                    <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-10 flex-col items-center">
+                        <div class="step-marker w-16 h-16 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-2xl border-4 border-pink-pastel">3</div>
+                   </div>
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <!-- Step Marker & Image (Left on desktop) -->
+                        <div class="md:w-1/2 flex flex-col items-center md:items-end order-1">
+                             <!-- Mobile Connector & Marker -->
+                             <div class="flex flex-col items-center mb-4 md:hidden">
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                                <div class="step-marker w-12 h-12 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg transform rotate-[-2deg] max-w-sm w-full">
+                                <!-- Image: Instagram/Phone -->
+                                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="Paso 3: Optimizar Instagram" class="rounded-xl w-full h-auto shadow-sm object-cover">
+                            </div>
+                        </div>
+
+                        <!-- Content (Right on desktop) -->
+                        <div class="md:w-1/2 bg-white rounded-3xl p-8 shadow-xl border-2 border-pink-pastel relative order-2">
+                            <div class="md:pl-12">
+                                <h3 class="text-2xl font-title text-pink-stronger mb-4">Optimizar tu instagram para que venda por vos en 30 minutos</h3>
+                                <ul class="space-y-3 mb-8 text-gray-700">
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Qué poner (y qué evitar) en tu bio</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Elementos que aumentan tu autoridad</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Plantillas, ejemplos y guías editables</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Optimización de historias destacadas, publicaciones fijadas y CTA</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Un GPT personalizado</li>
+                                </ul>
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                                    <span class="text-2xl font-bold text-gray-900">$10 USD</span>
+                                    <button class="btn-primary py-3 px-6 rounded-full text-white font-bold text-sm">
+                                        QUIERO ESTA CLASE 💖
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ PASO 4 (Reversed Layout on Desktop) ============ -->
+                <div class="relative z-10 mb-32">
+                     <!-- Desktop Center Marker -->
+                     <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-10 flex-col items-center">
+                        <div class="step-marker w-16 h-16 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-2xl border-4 border-pink-pastel">4</div>
+                   </div>
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                        <!-- Content (Left on desktop) -->
+                        <div class="md:w-1/2 bg-white rounded-3xl p-8 shadow-xl border-2 border-pink-pastel order-2 md:order-1">
+                             <div class="md:pr-12 text-right md:text-left">
+                                <h3 class="text-2xl font-title text-pink-stronger mb-4">Cómo vender por chat sin sonar vendedor (aunque odies las ventas)</h3>
+                                <ul class="space-y-3 mb-8 text-gray-700 inline-block text-left">
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Guión de ventas por mensaje (testado)</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Cómo responder objeciones sin miedo</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Psicología de la conversación que convierte</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Plantillas de respuestas + ejemplos reales</li>
+                                    <li class="flex items-start"><i class="fas fa-check-circle text-pink-strong mt-1 mr-3"></i> Un GPT experto en ventas por mensaje</li>
+                                </ul>
+                                <div class="flex items-center justify-between border-t border-gray-100 pt-6">
+                                    <span class="text-2xl font-bold text-gray-900">$10 USD</span>
+                                    <button class="btn-primary py-3 px-6 rounded-full text-white font-bold text-sm">
+                                        QUIERO ESTA CLASE 💖
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Step Marker & Image (Right on desktop) -->
+                         <div class="md:w-1/2 flex flex-col items-center md:items-start order-1 md:order-2">
+                             <!-- Mobile Connector & Marker -->
+                             <div class="flex flex-col items-center mb-4 md:hidden">
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                                <div class="step-marker w-12 h-12 bg-pink-strong text-white rounded-full flex items-center justify-center font-bold text-xl">4</div>
+                                <div class="h-8 w-1 bg-pink-strong"></div>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-lg transform rotate-[2deg] max-w-sm w-full">
+                                <!-- Image: Chatting/Phone -->
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Paso 4: Ventas por Chat" class="rounded-xl w-full h-auto shadow-sm object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- End Max-w-4xl container -->
+        </div>
+    </section>
+
+    <!-- ========== STEP 5: THE IRRESISTIBLE BUNDLE OFFER ========== -->
+    <section class="py-20 bg-gradient-pink text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'0 0 0\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <div class="inline-block bg-white text-pink-stronger px-6 py-2 rounded-full font-bold mb-8 shadow-lg animate-bounce">
+                🔥 OFERTA FINAL DEL MAPA 🔥
+            </div>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight">
+                ¿Por qué elegir solo uno?<br>Llevate el Mapa Completo.
+            </h2>
+            
+            <div class="max-w-3xl mx-auto bg-white text-gray-800 rounded-[3rem] p-8 md:p-12 shadow-2xl border-4 border-pink-pastel/50 transform hover:scale-105 transition-transform duration-300">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+                    <div class="text-center md:text-left">
+                        <p class="text-xl text-gray-500 line-through mb-2">Valor Total: $40 USD</p>
+                        <div class="flex items-center justify-center md:justify-start gap-4">
+                            <span class="text-6xl md:text-7xl font-bold text-pink-stronger">$27</span>
+                            <span class="text-2xl font-bold text-gray-700">USD</span>
+                        </div>
+                        <p class="text-pink-strong font-medium mt-2">Ahorras $13 USD hoy</p>
+                    </div>
+                    <!-- Bundle Image -->
+                    <div class="w-48 h-48 relative hidden md:block">
+                         <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&w=600&q=80" alt="Pack Completo" class="rounded-xl shadow-lg absolute top-0 right-0 z-10 transform rotate-6 border-4 border-white object-cover h-full w-full">
+                         <div class="w-full h-full bg-pink-stronger rounded-xl absolute top-4 right-4 z-0 transform rotate-12 opacity-50"></div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-left mb-10">
+                    <div class="flex items-start">
+                        <i class="fas fa-gift text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Accedé a las 4 clases completas inmediatamente.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-folder-open text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Incluye todas las plantillas, ejercicios y recursos extra.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-mobile-alt text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Acceso inmediato desde cualquier dispositivo (PC/Móvil).</p>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-infinity text-2xl text-pink-strong mr-4 mt-1"></i>
+                        <p class="text-lg">Acceso de por vida a todo el contenido.</p>
+                    </div>
+                </div>
+
+                <!-- FAKE ORDER FORM / CHECKOUT AREA -->
+                <div class="bg-pink-pastel p-6 rounded-2xl border-2 border-pink-base/30 mb-8">
+                    <h4 class="text-xl font-bold text-pink-stronger mb-4 flex items-center">
+                        <i class="fas fa-shopping-cart mr-3"></i> Resumen del Pedido
+                    </h4>
+                    <div class="flex justify-between items-center mb-4 text-lg font-medium border-b border-pink-base/20 pb-4">
+                        <span>Pack "Mapa Digital 2026" (4 Clases)</span>
+                        <span>$27.00 USD</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xl font-bold text-pink-stronger">
+                        <span>Total a Pagar:</span>
+                        <span>$27.00 USD</span>
+                    </div>
+                </div>
+
+                <button class="w-full btn-primary py-6 px-8 rounded-full text-white font-bold text-2xl shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center">
+                    QUIERO TODO EL CONTENIDO AHORA 💖
+                    <i class="fas fa-arrow-right ml-4 animate-pulse"></i>
+                </button>
+                <p class="text-gray-500 text-sm mt-4 flex items-center justify-center">
+                    <i class="fas fa-lock mr-2"></i> Pago 100% Seguro y Garantizado.
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ SECTION (Objection Handling) ========== -->
+    <section id="faq" class="py-20 bg-gray-soft">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-3xl md:text-4xl text-center text-gray-900 mb-12">❓ Preguntas Frecuentes</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-md">
+                    <h4 class="text-xl font-bold text-pink-stronger mb-3">¿Puedo comprar solo una clase?</h4>
+                    <p class="text-gray-700 leading-relaxed">Sí, por supuesto. Cada clase individual tiene un valor de $10 USD. Sin embargo, en esta página especial puedes llevarte el pack completo de las 4 clases por solo $27 USD (ahorrando $13).</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md">
+                    <h4 class="text-xl font-bold text-pink-stronger mb-3">¿Necesito experiencia o seguidores para empezar?</h4>
+                    <p class="text-gray-700 leading-relaxed">No. Absolutamente todo el contenido está pensado y estructurado para empezar desde cero. Si ya tienes algo de experiencia, te servirá para ordenar y potenciar tus resultados.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md">
+                    <h4 class="text-xl font-bold text-pink-stronger mb-3">¿Cuánto duran las clases y cuándo accedo?</h4>
+                    <p class="text-gray-700 leading-relaxed">Son clases dinámicas y al grano, de entre 20 y 60 minutos cada una. Accedes a todo el material de forma inmediata y automática tras tu compra, y el acceso es para siempre.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md">
+                    <h4 class="text-xl font-bold text-pink-stronger mb-3">¿Incluye material extra además de los videos?</h4>
+                    <p class="text-gray-700 leading-relaxed">Sí. Cada clase incluye plantillas editables, recursos descargables, ejemplos reales y ejercicios prácticos para que apliques lo aprendido al instante. Además de los GPTs personalizados mencionados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-900 text-white py-12 text-center">
+        <div class="container mx-auto px-4">
+            <h4 class="text-2xl font-title text-pink-base mb-6">Sol - Tu Profe Digital</h4>
+            <p class="text-gray-400 mb-8 max-w-md mx-auto">
+                Enseñándote a construir un negocio digital con libertad desde 2020.
+            </p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-pink-base transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-base transition-colors"><i class="fab fa-tiktok text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-base transition-colors"><i class="far fa-envelope text-2xl"></i></a>
+            </div>
+            <p class="text-gray-600 text-sm">
+                © 2025 Todos los derechos reservados. Esta página no es parte de Facebook Inc. ni de Google Inc.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
