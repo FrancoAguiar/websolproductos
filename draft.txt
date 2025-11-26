@@ -485,7 +485,7 @@ Aunque hoy no tengas experiencia ni sepas qué podrías enseñar, esta clase te 
                         <ul class="text-sm text-gray-500 space-y-2 mb-6 inline-block text-left">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Clase Grabada</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Material complementario</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> BOT para crear productos digitales</li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> BOT para crear productos digitales</li>
                         </ul>
                         <div class="block">
                             <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
@@ -551,9 +551,9 @@ Te muestro cómo crear una oferta que conecte, cómo armar tu página de ventas 
                         <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Cómo optimizar tu Instagram </br>(Para vender en automatico)</h3>
                         <p class="text-gray-600 mb-6">Vas a aprender a optimizar tu perfil de Instagram para que comunique con claridad y venda por vos, incluso si tenés pocos seguidores. </br></br>Te explico los 7 elementos clave que aumentan tu tasa de conversión, y cómo mejorar tu biografía, tus historias destacadas y tu feed para generar confianza al instante.</p>
                         <ul class="text-sm text-gray-500 space-y-2 mb-6 inline-block text-left">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Biografía que convierte</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Autoridad visual</li>
-                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> BOT para optimizar perfiles y resolver dudas.</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Clase Grabada</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Material complementario</li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> BOT para optimizar perfiles y resolver dudas</li>
                         </ul>
                         <div class="block">
                             <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
@@ -593,12 +593,13 @@ Te muestro cómo crear una oferta que conecte, cómo armar tu página de ventas 
                     <!-- Right Content -->
                     <div class="w-full md:w-1/2 md:pl-12 order-2 md:order-2 pl-12 md:pl-0">
                         <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 4: Cierre</span>
-                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Ventas por Chat (Anti-Vendedor)</h3>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Como ser Vendedor de tu Producto </br>(Aunque no sepas vender)</h3>
                         <p class="text-gray-600 mb-6">Cierra ventas sin sentirte molesto o insistente. Psicología conversacional pura.</p>
                         <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Guiones de venta probados</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Manejo de objeciones</li>
-                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> GPT Experto en Cierre</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Clase Grabada</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Plantilla de mensajes (disparadores de conversación)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> 3 E-books para volverte un experto en venta con material detallado </li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> BOT Experto en venta para que te ayude a cerrar por mensaje </li>
                         </ul>
                         <div class="block">
                             <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
