@@ -627,7 +627,7 @@ Te muestro cómo crear una oferta que conecte, cómo armar tu página de ventas 
             <div class="inline-block bg-text-gold-light text-pink-stronger px-6 py-2 rounded-full font-bold mb-8 shadow-lg animate-bounce">
                 🔥 OFERTA FINAL DEL MAPA 🔥
             </div>
-            <h2 class="font-title text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight font-extrabold">
+            <h2 class="font-title text-4xl md:text-5xl lg:text-5xl mb-6 leading-tight font-extrabold">
                 ¿Por qué elegir solo uno?<br>Llevate el Mapa Completo.
             </h2>
             
@@ -700,7 +700,7 @@ Te muestro cómo crear una oferta que conecte, cómo armar tu página de ventas 
             </h2>
 
             <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
-                Queremos que tomes una decisión con el <span class="text-pink-600 font-semibold">corazón</span> ❤️
+                Quiero que tomes una decisión con el <span class="text-pink-600 font-semibold">corazón</span> ❤️
             </p>
 
             <div class="faq-list space-y-4">
@@ -762,7 +762,7 @@ y Ejercicios para aplicar lo aprendido.
                     ¿Listo para empezar tu libertad digital?
                 </h3>
                 <a href="#offer" class="bg-gradient-to-r from-pink-500 to-pink-600 text-white font-extrabold py-4 px-8 rounded-full shadow-lg hover:scale-105 transition-transform inline-block">
-                    🚀 QUIERO UNIRME A DWA
+                   ¡QUIERO EMPEZAR AHORA!
                 </a>
             </div>
 
@@ -774,10 +774,19 @@ y Ejercicios para aplicar lo aprendido.
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-b border-white/20 pb-10">
                 <div class="max-w-md">
-                    <h2 class="text-4xl font-black">DWA 💗</h2>
+                    <span class="flex items-center gap-2">
+  <img 
+    src="https://i.ibb.co/bRq2N53R/Chat-GPT-Image-2-jul-2025-01-39-05-p-m-1.png" 
+    class="w-7 h-7 rounded-full shadow-sm" 
+    alt="Sol Guerrieri"
+  >
+  <span class="font-title font-semibold text-white text-lg tracking-tight">
+    @hisolci
+  </span>
+</span>
+
                     <p class="text-white/80 mt-2 leading-relaxed">
-                        La academia de <span class="font-semibold text-white">Sol Guerrieri</span> que transforma tu conocimiento en libertad digital.  
-                        Empezá hoy, sin experiencia previa.
+                        Acompaño a personas que quieren empezar en <span class="font-semibold text-white"> el mundo digital </span> y transformar lo que saben en libertad, a su ritmo y con propósito.
                     </p>
                 </div>
 
@@ -792,7 +801,7 @@ y Ejercicios para aplicar lo aprendido.
             </div>
 
             <div class="mt-10 text-sm text-white/80 text-center md:text-left">
-                <p>© 2025 <span class="font-semibold text-white">Sol Guerrieri</span> — Digital Wealth Academy 💗</p>
+                <p>© 2025 <span class="font-semibold text-white">Sol Guerrieri</span> 💗</p>
                 <p class="mt-1 text-white/70">Hecho con amor, propósito y visión.</p>
             </div>
         </div>
