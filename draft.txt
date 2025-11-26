@@ -465,8 +465,8 @@
     <section id="map-start" class="py-24 bg-pink-pastel/30 relative overflow-hidden">
         <div class="container mx-auto px-4 relative">
             <div class="text-center mb-16">
-                <h2 class="font-title text-3xl md:text-5xl font-bold text-gray-900">Tu Ruta al Éxito</h2>
-                <p class="mt-4 text-gray-600">Puedes adquirir cada paso individualmente o el mapa completo al final.</p>
+                <h2 class="font-title text-3xl md:text-5xl font-bold text-gray-900">Tu camino, a tu ritmo.</h2>
+                <p class="mt-4 text-gray-600">Podés elegir el paso que necesitás ahora, o acceder a la ruta completa y tener todo resuelto desde el principio.</p>
             </div>
 
             <div class="relative max-w-5xl mx-auto">
@@ -479,8 +479,8 @@
                     <!-- Left Content -->
                     <div class="w-full md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0">
                         <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 1: Fundamentos</span>
-                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Cómo vender online (sin seguidores)</h3>
-                        <p class="text-gray-600 mb-6">El mito de "necesito 10k seguidores" muere aquí. Aprende a crear ofertas irresistibles desde cero.</p>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Como Crear tu Producto Digital </br>(paso a paso)</h3>
+                        <p class="text-gray-600 mb-6">Empezás desde cero y terminás con tu producto digital listo para vender en un día.</p>
                         <ul class="text-sm text-gray-500 space-y-2 mb-6 inline-block text-left">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Oferta irresistible</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Estructura de ventas simple</li>
@@ -693,7 +693,7 @@
         <div class="container mx-auto px-6 max-w-3xl">
 
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-6">
-                ¿Tenés preguntas? Tenemos respuestas 💬
+                ¿Tenés preguntas? </br>Tenemos respuestas 💬
             </h2>
 
             <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
@@ -704,41 +704,51 @@
 
                 <div class="faq-item p-0 overflow-hidden">
                     <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
-                        ¿Cuánto tiempo tengo acceso al curso?
+                        ¿Puedo comprar solo una clase?
                         <span class="icon-heart"></span>
                     </button>
                     <div class="faq-answer text-gray-600 px-6 pb-6">
-                        Accedés de por vida. Incluye todas las actualizaciones y bonus sin costo adicional.
+                        Sí. Cada clase cuesta $10 USD.
+Pero si te llevás el pack completo, accedés a las 4 por solo $27 USD.
+ Pagás menos y tenés el sistema entero resuelto.
                     </div>
                 </div>
 
                 <div class="faq-item p-0 overflow-hidden">
                     <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
-                        ¿Puedo vender DWA?
+                        ¿Necesito experiencia o seguidores?
                         <span class="icon-heart"></span>
                     </button>
                     <div class="faq-answer text-gray-600 px-6 pb-6">
-                        Sí. Podés revender DWA y ganar el 85% de cada venta. Te damos el sistema y toda la estrategia lista.
+                         Claro que no!
+Este sistema está pensado para personas que empiezan desde cero: sin comunidad, sin títulos y sin saber vender.
                     </div>
                 </div>
 
                 <div class="faq-item p-0 overflow-hidden">
                     <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
-                        ¿Necesito experiencia previa?
+                        ¿Cuánto tiempo duran las clases?
                         <span class="icon-heart"></span>
                     </button>
                     <div class="faq-answer text-gray-600 px-6 pb-6">
-                        No. Está pensado para principiantes. Aprendés desde cero con ejemplos reales.
+                        Entre 20 y 60 minutos cada una.
+Son dinámicas, prácticas y van directo al punto.
+Tenés acceso inmediato y para siempre.
                     </div>
                 </div>
 
                 <div class="faq-item p-0 overflow-hidden">
                     <button class="faq-question w-full p-6 flex justify-between items-center text-left text-lg">
-                        ¿Qué soporte tengo si me trabo?
+                        ¿Incluye material extra?
                         <span class="icon-heart"></span>
                     </button>
                     <div class="faq-answer text-gray-600 px-6 pb-6">
-                        Tenés soporte por WhatsApp, mentorías grupales y comunidad privada.
+                        Sí.
+Cada clase incluye:
+Plantillas listas para usar
+, Recursos descargables
+, Ejemplos reales
+y Ejercicios para aplicar lo aprendido.
                     </div>
                 </div>
 
@@ -872,4 +882,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
