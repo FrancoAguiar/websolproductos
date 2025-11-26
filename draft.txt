@@ -395,11 +395,11 @@
             <div class="max-w-4xl mx-auto">
 
                 <span class="inline-block bg-pink-pastel text-pink-strong font-semibold py-1 px-4 rounded-full text-sm mb-4">
-                    LA ACADEMIA DIGITAL #1 DEL MUNDO
+                    TU MAPA DIGITAL DESDE CERO
                 </span>
 
                 <h1 class="text-4xl md:text-6xl font-black text-gray-800 leading-tight">
-                    Crea, lanza y vende tu propio producto digital paso a paso, sin experiencia💖
+                    Crea, lanza y vende tu propio producto digital paso a paso y sin experiencia 💖
                 </h1>
 
                 <p class="mt-4 text-2xl md:text-3xl font-bold text-pink-stronger">
@@ -407,7 +407,7 @@
                 </p>
 
                 <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Aunque hoy no tengas seguidores, experiencia ni producto. </br>Estas clases te dan el <strong class="text-pink-strong">MAPA</strong> claro para empezar a vender productos digitales desde cero.
+                    Aunque hoy no tengas seguidores, experiencia ni producto. </br>Estas clases son el <strong class="text-pink-strong">MAPA</strong> claro para empezar a vender productos digitales desde cero.
                     </p>
 
                 <a href="#offer" 
@@ -416,7 +416,7 @@
                 </a>
 
                 <div class="mt-8 text-gray-500 text-sm">
-                    <p>+120.000 estudiantes en todo el mundo • Acceso inmediato • 85% de comisiones</p>
+                    <p>• Acceso inmediato y de por vida•</p>
                 </div>
             </div>
         </div>
@@ -427,7 +427,7 @@
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/2 relative">
                     <div class="absolute inset-0 bg-pink-strong rounded-3xl transform rotate-3 opacity-20"></div>
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop" alt="Foto de Sol" class="relative rounded-3xl shadow-2xl w-full object-cover h-[500px] transform -rotate-2 hover:rotate-0 transition duration-500">
+                    <img src="https://i.imgur.com/UEaOQfc.jpeg" alt="Foto de Sol" class="relative rounded-3xl shadow-2xl w-full object-cover h-[500px] transform -rotate-2 hover:rotate-0 transition duration-500">
                     <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg flex items-center gap-3">
                         <div class="bg-green-100 p-2 rounded-full">
                             <i data-lucide="check-circle" class="text-green-600 w-6 h-6"></i>
@@ -480,11 +480,12 @@
                     <div class="w-full md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0">
                         <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 1: Fundamentos</span>
                         <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Como Crear tu Producto Digital </br>(paso a paso)</h3>
-                        <p class="text-gray-600 mb-6">Empezás desde cero y terminás con tu producto digital listo para vender en un día.</p>
+                        <p class="text-gray-600 mb-6">Vas a aprender qué es un producto digital, en qué formato crearlo, cómo validarlo y organizarlo desde cero.</br></br>
+Aunque hoy no tengas experiencia ni sepas qué podrías enseñar, esta clase te guía paso a paso para que termines con tu primer producto listo para vender.</br> </br> Incluye:</p>
                         <ul class="text-sm text-gray-500 space-y-2 mb-6 inline-block text-left">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Oferta irresistible</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Estructura de ventas simple</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Checklist descargable</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Clase Grabada</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Material complementario</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> BOT para crear productos digitales</li>
                         </ul>
                         <div class="block">
                             <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
@@ -525,12 +526,13 @@
                     <!-- Right Content -->
                     <div class="w-full md:w-1/2 md:pl-12 order-2 md:order-2 pl-12 md:pl-0">
                         <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 2: Creación Rápida</span>
-                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Productos Digitales en 1 Día</h3>
-                        <p class="text-gray-600 mb-6">No pases meses creando algo que no sabes si se venderá. Valida rápido, crea rápido.</p>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Cómo Vender tu Producto Digital </br>(Aunque nadie te conozca)</h3>
+                        <p class="text-gray-600 mb-6">En esta clase vas a aprender cómo vender tu producto digital aunque no tengas seguidores ni experiencia.</br></br>
+Te muestro cómo crear una oferta que conecte, cómo armar tu página de ventas sin saber diseño y cómo activar tu primer sistema de ventas online paso a paso.</br></br>Incluye:</p>
                         <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Tipos de productos top ventas</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Crea el producto en 24hs</li>
-                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> Incluye un GPT personalizado</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Clase Grabada</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Material complementario</li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i>BOT asistente de negocio</li>
                         </ul>
                         <div class="block">
                             <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
@@ -546,12 +548,12 @@
                     <!-- Left Content -->
                     <div class="w-full md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 pl-12 md:pl-0">
                         <span class="text-pink-strong font-bold tracking-widest text-sm uppercase mb-2 block">Paso 3: Escaparate</span>
-                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Optimiza tu Instagram (Máquina de Ventas)</h3>
-                        <p class="text-gray-600 mb-6">Tu perfil no es un álbum de fotos, es tu landing page. Optimízala en 30 minutos.</p>
+                        <h3 class="font-title text-2xl font-bold mb-4 text-gray-900">Cómo optimizar tu Instagram </br>(Para vender en automatico)</h3>
+                        <p class="text-gray-600 mb-6">Vas a aprender a optimizar tu perfil de Instagram para que comunique con claridad y venda por vos, incluso si tenés pocos seguidores. </br></br>Te explico los 7 elementos clave que aumentan tu tasa de conversión, y cómo mejorar tu biografía, tus historias destacadas y tu feed para generar confianza al instante.</p>
                         <ul class="text-sm text-gray-500 space-y-2 mb-6 inline-block text-left">
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Biografía que convierte</li>
                             <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-pink-strong"></i> Autoridad visual</li>
-                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> GPT de Optimización incluido</li>
+                            <li class="flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i> BOT para optimizar perfiles y resolver dudas.</li>
                         </ul>
                         <div class="block">
                             <button class="group relative px-6 py-2 rounded-full font-bold transition overflow-hidden bg-white border-2 border-pink-strong text-pink-strong hover:text-white">
